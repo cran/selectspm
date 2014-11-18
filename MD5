@@ -1,0 +1,9 @@
+fb1753fd89a0e9e858c819fd6238a13c *DESCRIPTION
+b3bbfd7c8fd1d1b8dd0e49b62f29d3b3 *NAMESPACE
+43514681776a5134a12fdc6e2deddbf8 *R/aic.function.R
+eba29fa1ebc3fff64de90048001dfe1e *R/ipc.estK2.R
+477bfef6abb2ecb76707b737ca34fd61 *R/plot.selectedmod.R
+a3d7159dab135a8543d994b33f718607 *R/print.selectedmod.R
+9d8f9dcf246b034bf850e5c5a1eb32e7 *R/select.model2.R
+4337e00038a2cfc1c7acf71d69e96384 *R/selectspm-internal.R
+6b7d4fff921a621366c909a785504842 *man/select.model2.Rd

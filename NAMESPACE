@@ -1,0 +1,12 @@
+# Export regular functions
+export("aic.function" , "ipc.estK2", "select.model2")
+
+# imports
+import(spatstat, ecespa)
+# ToDo: "importFrom" only required functions 
+
+## Registration of S3 methods
+import(stats)
+import(graphics)
+S3method(plot, selectedmod)
+S3method(print, selectedmod)
