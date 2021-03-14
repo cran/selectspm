@@ -3,6 +3,8 @@ export("aic.function" , "ipc.estK2", "select.model2","select.model.gof", "envelo
 
 # imports
 import(spatstat, ecespa)
+import(spatstat.geom, spatstat.core)
+
 # ToDo: "importFrom" only required functions 
 
 

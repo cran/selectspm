@@ -82,7 +82,7 @@ function (pp, sigmas, r, nlarge = 10000, q = 1/4, p = 2, correction = "trans",
 	     
 	         hpc.model.ok[[m]]$lambda <- lambda # plug lambda into the model in order to simulate them with rIPCP
 		 set.seed(seed)
-	 	 test.HPC[[m]] <-envelope(pp, Kinhom, sigma = sigmas[i], r=r, nsim=nsim, 
+	 	 test.HPC[[m]] <-envelope.ppp(pp, Kinhom, sigma = sigmas[i], r=r, nsim=nsim, 
 	                                     simulate=expression(rIPCP(hpc.model.ok[[m]])),savefuns=TRUE,
 					     correction=correction, nlarge=nlarge)
 		gof.test.HPC[[m]]<-LF.gof(test.HPC[[m]])
@@ -110,7 +110,7 @@ function (pp, sigmas, r, nlarge = 10000, q = 1/4, p = 2, correction = "trans",
 	 cat(paste("evaluating adjustment for HPP model","\n"))
 	# store HPP and the best  HPC 
 	set.seed(seed)
-	HPPs[[i]] <- envelope(pp, Kinhom, sigma = sigmas[i], r=r, nsim=nsim, 
+	HPPs[[i]] <- envelope.ppp(pp, Kinhom, sigma = sigmas[i], r=r, nsim=nsim, 
 	                                   simulate=expression(rpoispp(lambda)),savefuns=TRUE,
 					   correction=correction, nlarge=nlarge)
         models[[i]] <- lambda
@@ -160,7 +160,7 @@ function (pp, sigmas, r, nlarge = 10000, q = 1/4, p = 2, correction = "trans",
 	     cat(paste("evaluating adjustment for PC model", m, "of ",length(pc.model.ok),"\n"))
 	        pc.model.ok[[m]]$lambda <-lambda.homo # la metemos en el modelo para poder simular con rIPCP
 		set.seed(seed)
-	 	 test.PC[[m]] <-envelope(pp, Kinhom, sigma = sigmas[i], r=r, nsim=nsim, 
+	 	 test.PC[[m]] <-envelope.ppp(pp, Kinhom, sigma = sigmas[i], r=r, nsim=nsim, 
 	                                     simulate=expression(rIPCP(pc.model.ok[[m]])),savefuns=TRUE,
 					     correction=correction, nlarge=nlarge)
 		gof.test.PC[[m]]<-LF.gof(test.PC[[m]])
@@ -186,7 +186,7 @@ function (pp, sigmas, r, nlarge = 10000, q = 1/4, p = 2, correction = "trans",
         # FINALY, "adjust " the homogeneopus Poisson model etc
 	cat(paste("evaluating adjustment for P model","\n"))
 	set.seed(seed)
-	 P <- envelope(pp, Kest,  r=r, nsim=nsim, simulate=expression(rpoispp(lambda.homo)),
+	 P <- envelope.ppp(pp, Kest,  r=r, nsim=nsim, simulate=expression(rpoispp(lambda.homo)),
 	             savefuns=TRUE, correction=correction, nlarge=nlarge)
     
    

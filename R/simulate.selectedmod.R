@@ -16,8 +16,9 @@ simulate.selectedmod<- function(object,nsim=99, seed=1, dimyx=c(128,128),...){
 	   bw <-  sumario["HPC.bw"]
 	   lambda <- density.ppp(x$pp, sigma=bw, dimyx=dimyx)
 	   simu.model$lambda <- lambda
+	   set.seed(seed)
 	   for( i  in 1:nsim){
-	           set.seed(seed)
+	           
 	           progressreport(i,nsim)
 	   	   result[[i]] <- rIPCP(simu.model)
 	   }
@@ -27,8 +28,9 @@ simulate.selectedmod<- function(object,nsim=99, seed=1, dimyx=c(128,128),...){
 	
 	 lambda <- predict(ppm(x$pp), type = "trend")
 	 simu.model$lambda <- lambda
+	 set.seed(seed)
 	 for( i  in 1:nsim){
-	           set.seed(seed)
+	           
 	           progressreport(i,nsim)
 	           result[[i]] <- rIPCP(simu.model)
 	   }
@@ -37,8 +39,9 @@ simulate.selectedmod<- function(object,nsim=99, seed=1, dimyx=c(128,128),...){
         if(cual=="HPP"){
 	   bw <- sumario["HPP.bw"]
 	   lambda <- density.ppp(x$pp, sigma=bw, dimyx=dimyx)
+	   set.seed(seed)
 	   for( i  in 1:nsim){
-	           set.seed(seed)
+	           
 	           progressreport(i,nsim)
   	           result[[i]] <- rpoispp(lambda)
 	   }
@@ -46,8 +49,9 @@ simulate.selectedmod<- function(object,nsim=99, seed=1, dimyx=c(128,128),...){
 	if(cual=="P"){
 	   lambda <- intensity(x$pp)
 	   ventana<- x$pp$window
+	    set.seed(seed)
 	   for( i  in 1:nsim){
-	           set.seed(seed)
+	          
 	           progressreport(i,nsim)
 	           result[[i]] <- rpoispp(lambda, win=ventana)
 	   }

@@ -13,7 +13,7 @@ envelope.selectedmodgof<- function(Y, fun=NULL, nrank=1,nsim=99,dimyx=c(128,128)
 	   
 	   lambda <- density.ppp(x$pp, sigma=bw, dimyx=dimyx)
 	   simu.model$lambda <- lambda
-	   result <- envelope(x$pp, fun, sigma=bw,
+	   result <- envelope.ppp(x$pp, fun, sigma=bw,
 	        simulate=expression(rIPCP(simu.model)),
 		savefuns =TRUE,nrank=nrank, nsim=nsim,...)
 	}
@@ -22,7 +22,7 @@ envelope.selectedmodgof<- function(Y, fun=NULL, nrank=1,nsim=99,dimyx=c(128,128)
 	   if(is.null(fun)) fun<- Kest
 	  lambda <- predict(ppm(x$pp), type = "trend")
 	  simu.model$lambda <- lambda
-	  result <- envelope(x$pp, fun,
+	  result <- envelope.ppp(x$pp, fun,
 	        simulate=expression(rIPCP(simu.model)),
 		savefuns =TRUE,nrank=nrank, nsim=nsim,...)
 		
@@ -32,13 +32,13 @@ envelope.selectedmodgof<- function(Y, fun=NULL, nrank=1,nsim=99,dimyx=c(128,128)
 	   if(is.null(fun)) fun<- Kinhom
 	  
 	   lambda <- density.ppp(x$pp, sigma=bw, dimyx=dimyx)
-  	   result <- envelope(x$pp, fun, sigma=bw,
+  	   result <- envelope.ppp(x$pp, fun, sigma=bw,
   		  simulate=expression(rpoispp(lambda)),
 		  savefuns =TRUE,nrank=nrank, nsim=nsim,...)
 	}
 	if("im"%in%cual & is.na(bw)){
 	   if(is.null(fun)) fun<- Kest
-	   result <- envelope(x$pp, fun,
+	   result <- envelope.ppp(x$pp, fun,
 	   savefuns =TRUE,nrank=nrank, nsim=nsim,...)
 	}
 	

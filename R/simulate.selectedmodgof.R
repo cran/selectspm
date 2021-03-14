@@ -12,8 +12,9 @@ simulate.selectedmodgof<- function(object, nsim=99, seed=1,dimyx=c(128,128),...)
 	 if("ecespa.minconfit"%in%cual & !is.na(bw) ){	   
 	   lambda <- density.ppp(x$pp, sigma=bw, dimyx=dimyx)
 	   simu.model$lambda <- lambda
+	   set.seed(seed)
 	    for( i  in 1:nsim){
-	           set.seed(seed)
+	           
 	           progressreport(i,nsim)
 	   	   result[[i]] <- rIPCP(simu.model)
 	   }
@@ -23,8 +24,9 @@ simulate.selectedmodgof<- function(object, nsim=99, seed=1,dimyx=c(128,128),...)
         if("ecespa.minconfit"%in%cual & is.na(bw) ){
 	  lambda <- predict(ppm(x$pp), type = "trend")
 	  simu.model$lambda <- lambda
+	   set.seed(seed)
 	 for( i  in 1:nsim){
-	           set.seed(seed)
+	          
 	           progressreport(i,nsim)
 	   	   result[[i]] <- rIPCP(simu.model)
 	   }
@@ -33,8 +35,9 @@ simulate.selectedmodgof<- function(object, nsim=99, seed=1,dimyx=c(128,128),...)
 	 # envueltas para un HPP
         if("im"%in%cual  & !is.na(bw) ){
 	 lambda <- density.ppp(x$pp, sigma=bw, dimyx=dimyx)
+	 set.seed(seed)
   	 for( i  in 1:nsim){
-	           set.seed(seed)
+	           
 	           progressreport(i,nsim)
   	           result[[i]] <- rpoispp(lambda)
 	   }
@@ -44,8 +47,9 @@ simulate.selectedmodgof<- function(object, nsim=99, seed=1,dimyx=c(128,128),...)
 	if("im"%in%cual & is.na(bw)){
 	   lambda <- intensity(x$pp)
 	   ventana<- x$pp$window
+	     set.seed(seed)
 	   for( i  in 1:nsim){
-	           set.seed(seed)
+	         
 	           progressreport(i,nsim)
 	           result[[i]] <- rpoispp(lambda, win=ventana)
 	   }
