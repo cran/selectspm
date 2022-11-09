@@ -5,7 +5,9 @@ export("aic.function" , "ipc.estK2", "select.model2","select.model.gof", "envelo
 import(spatstat)
 importFrom("ecespa", "rIPCP")
 
-importFrom("spatstat.core", "density.ppp", "envelope", "envelope.ppp", "Kest", "Kinhom", "plot.fv", "ppm", "predict.ppm")
+importFrom("spatstat.explore", "density.ppp", "envelope", "envelope.ppp", "Kest", "Kinhom", "plot.fv")
+
+importFrom("spatstat.model",  "ppm", "predict.ppm")
 
 importFrom("spatstat.random", "rpoispp" )
 
