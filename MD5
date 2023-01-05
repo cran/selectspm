@@ -1,4 +1,4 @@
-34ea8c64f014e52ae867b73f696df4b1 *DESCRIPTION
+2524aff66f5e72a35f13a273d876ccbc *DESCRIPTION
 1988570e26e99ccc1ddf693d0fe10e9d *NAMESPACE
 86e40bb5029fbc2a9f73a8e326dfcc20 *R/LF.gof.R
 43514681776a5134a12fdc6e2deddbf8 *R/aic.function.R
@@ -14,7 +14,7 @@ a3d7159dab135a8543d994b33f718607 *R/print.selectedmod.R
 a2470da2047b5e3a87819c4e3cbaa4a8 *R/simulate.selectedmod.R
 860c14752e4a755173b85d14c8341f2c *R/simulate.selectedmodgof.R
 cdc0257d16646d7d19d6d7002fce6d6e *data/teucrium.rda
-e95cee1a0e2cc5c49b540b7c57183f9f *man/LF.gof.Rd
-17fb18ac9cf51f09796ccab84f6901a3 *man/select.model.gof.Rd
-7c05b6eaf4a811ba77b52256c74b6944 *man/select.model2.Rd
-9d9daf3da598f3d7ce8167e78f0d69a8 *man/teucrium.Rd
+9b660a76aef85cf9a6b8cd6f7d8020b6 *man/LF.gof.Rd
+f2ea30dae8ef77a87a4bd19f9d5b80f2 *man/select.model.gof.Rd
+29105fe91fd7491863306716b36b1987 *man/select.model2.Rd
+e020279f0c5e887691ab6618aa556936 *man/teucrium.Rd
